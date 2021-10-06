@@ -30,7 +30,7 @@
                 android:text="total" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txttotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -50,7 +50,7 @@
                 android:text="hombre" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/txthombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -71,7 +71,7 @@
                 tools:text="Mujer" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/txtmujer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

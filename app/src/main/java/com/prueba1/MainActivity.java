@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (c1.getText().toString().equals("adm123")&&(contra.getText().toString().equals("adm123")))
                 {
-                    Intent I = new Intent(getApplicationContext(),MainActivity2.class);
+                    Intent I = new Intent(getApplicationContext(),MainActivity3.class);
                     startActivity(I);
                 }
                 else
