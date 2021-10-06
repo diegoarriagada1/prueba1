@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity {
     TextView txt1,txt2;
@@ -41,25 +42,31 @@ public class MainActivity3 extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Integer h =0,m=0;
-                        Integer Total = h+m;
-                        String genero = sp1.getSelectedItem().toString();
-                        if (genero.equals("HOMBRE"))
-                        {
-                            h++;
+                        if(txt1.getText().toString().equals("")&&txt2.getText().toString().equals("")){
+                            Toast.makeText(getApplicationContext(),"deben estar todos los campos completos",Toast.LENGTH_LONG).show();
                         }
-                        if (genero.equals("MUJER"))
-                        {
-                            m++;
+                        else{
+                            String genero = sp1.getSelectedItem().toString();
+                            Integer h =0,m=0;
+                            if (genero.equals("HOMBRE"))
+                            {
+                                h++;
+                            }
+                            if (genero.equals("MUJER"))
+                            {
+                                m++;
+                            }
+
+                            Intent I = new Intent(getApplicationContext(),MainActivity2.class);
+                            Integer Total = h+m;
+                            I.putExtra("TOTAL",Total);
+                            I.putExtra("CONTADORH",h);
+                            I.putExtra("CONTADORM",m);
+                            startActivity(I);
                         }
-                        Intent I = new Intent(getApplicationContext(),MainActivity2.class);
 
-                        I.putExtra("TOTAL",Total);
-                        I.putExtra("CONTADORH",h);
-                        I.putExtra("CONTADORM",m);
-
-                        startActivity(I);
                     }
+
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     @Override
